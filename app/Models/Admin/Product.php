@@ -16,7 +16,6 @@ class Product extends Model
         'product_name',
         'slug',
         'category_id',
-        'qty',
         'admin_id',
         'price',
         'product_img_url',

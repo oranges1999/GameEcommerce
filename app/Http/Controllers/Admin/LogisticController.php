@@ -80,7 +80,7 @@ class LogisticController extends Controller
         if($request->has("product")){
             $dataLogistic["note"]=$request->note;
             $logistic->update($dataLogistic);
-            $logisticDetails=LogisticDetails::where("logistic_id",$logistic->id)->delete();
+            LogisticDetails::where("logistic_id",$logistic->id)->delete();
             foreach($request->product as $key=>$qty){
                 $logistic_details["logistic_id"]=$logistic->id;
                 $logistic_details["product_id"]=$key;
@@ -100,6 +100,8 @@ class LogisticController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        LogisticDetails::where("logistic_id",$id)->delete();
+        Logistic::where("id",$id)->delete();
+        return redirect()->back()->with("success","Delete Succesfully");
     }
 }

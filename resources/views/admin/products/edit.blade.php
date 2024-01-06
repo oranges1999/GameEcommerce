@@ -35,10 +35,6 @@
       </select> 
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Qty</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->qty}}" name="qty">
-  </div>
-  <div class="form-group">
     <label for="exampleInputEmail1">Price</label>
     <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$product->price}}" name="price">
   </div>

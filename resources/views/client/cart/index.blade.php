@@ -29,7 +29,7 @@
                         <form action="{{route("client.cart.destroy",$key)}}" method="post">
                         @csrf
                         @method('delete')
-                        <button class="btn btn-danger"><i class="fa fa-trash">{{$key}}</i></button>
+                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

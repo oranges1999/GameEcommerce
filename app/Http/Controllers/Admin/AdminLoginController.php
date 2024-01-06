@@ -14,9 +14,9 @@ class AdminLoginController extends Controller
     public function pAdminLogin(Request $request){
         $admin = $request->only("email","password");
         if(Auth::guard('admin')->attempt($admin)){
-            return view("admin.home");
+            return redirect()->route("admin.adminhome.index");
         }
-        return redirect()->route("admin.login")->with('error','Bạn không có quyền');
+        return redirect()->route("admin.login")->with('error','Sài tài khoản hoặc mật khẩu');
     }
     public function adminLogout(){
         Auth::guard('admin')->logout();

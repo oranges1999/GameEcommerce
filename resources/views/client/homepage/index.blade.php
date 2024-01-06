@@ -10,15 +10,11 @@
                 <div class="carousel-item active">
                 <img class="banner-item d-block w-100" src="{{ asset('asset/banner1.jpg') }}" alt="First slide">
                 <div class="main-content position-absolute d-flex flex-column align-items-end">
-                    <div class="discount">
-                        50% OFF
-                    </div>
                     <div class="title">
                         DISHONORED 2
                     </div>
                     <div class="d-flex align-items-end">
-                        <div class="price-before">100$</div>
-                        <div class="price-after">50$</div>
+                        <div class="price-after">250.000VND</div>
                     </div>
                 </div>
                 <div class="position-absolute buy-btn">
@@ -48,9 +44,7 @@
                         </div>
                     </div>
                     
-                    <div class="buy-btn-right position-absolute">
-                        <button>SHOP NOW</button>
-                    </div>
+                    
                 </div>
             </div>
             <div class="bottom-sub-banner position-relative">
@@ -62,14 +56,10 @@
                     <div class="title">
                         CONTROLLER
                     </div>
-                    <div class="discount">
-                        50% OFF
-                    </div>
+               
                 </div>
                 
-                <div class="buy-btn-right position-absolute">
-                    <button>SHOP NOW</button>
-                </div>
+                
             </div>
         </div>
     </div> 

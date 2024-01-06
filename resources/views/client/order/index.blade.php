@@ -101,7 +101,7 @@
             </table>
             <div>
                 <input type="text" name="total" id="" value="{{$total}}" hidden>
-                <button class="btn btn-primary" type="submit" name="redirect">Place order with Cash On Delivery</button>
+                <button class="btn btn-primary" type="submit" name="redirect">Place order</button>
             </div>
         </div>
     </form>
