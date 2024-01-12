@@ -1,3 +1,3 @@
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="theme/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="{{asset("asset/logo-ITPlus-color.png")}}" alt="AdminLTELogo" width="200px">
   </div>
