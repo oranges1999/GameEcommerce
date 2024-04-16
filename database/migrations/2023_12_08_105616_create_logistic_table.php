@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('logistic', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('admin_id');
-            $table->longText('note')->default('Nhập hàng');
+            $table->longText('note');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('logistic_tabtle');
+        Schema::dropIfExists('logistic');
     }
 };
