@@ -30,12 +30,6 @@ jobs:
       - name: Generate application key
         run: php artisan key:generate
 
-      - name: Run migrations (MySQL)
-        env:
-          DB_CONNECTION: mysql
-          DB_DATABASE: ":memory:"
-        run: php artisan migrate --force
-
       - name: Run unit tests
         env:
           DB_CONNECTION: sqlite
