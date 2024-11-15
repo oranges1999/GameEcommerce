@@ -99,10 +99,16 @@ class CategoriesController extends Controller
             Storage::delete($file);
         }
         $categoryId = $category->id;
-        if(!$category->delete()){
+        try {
+            DB::beginTransaction();
+            $category->delete();
             DB::table('products')->where('category_id', $categoryId)->delete();
+            DB::commit();
             return redirect()->route('admin.categories.index')->with('success','Delete succesfully');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->route('admin.categories.index')->with('error','Delete unsuccesfully, please try again');
         }
-        return redirect()->route('admin.categories.index')->with('error','Delete unsuccesfully, please try again');
+        
     }
 }
