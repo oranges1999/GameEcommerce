@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -97,9 +98,11 @@ class CategoriesController extends Controller
         if($category->image_url && Storage::exists($file)){
             Storage::delete($file);
         }
+        $categoryId = $category->id;
         if(!$category->delete()){
-            return redirect()->route('admin.categories.index')->with('error','Delete unsuccesfully, please try again');
+            DB::table('products')->where('category_id', $categoryId)->delete();
+            return redirect()->route('admin.categories.index')->with('success','Delete succesfully');
         }
-        return redirect()->route('admin.categories.index')->with('success','Delete succesfully');
+        return redirect()->route('admin.categories.index')->with('error','Delete unsuccesfully, please try again');
     }
 }
